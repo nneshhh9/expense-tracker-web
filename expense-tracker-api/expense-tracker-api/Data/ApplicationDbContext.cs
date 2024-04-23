@@ -6,7 +6,7 @@ namespace expense_tracker_api.Data;
 
 public class ApplicationDbContext : DbContext
 {
-    public ApplicationDbContext(DbContextOptions options): base(options) {}
+    public ApplicationDbContext(DbContextOptions options): base(options) { }
     
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<Category> Categories { get; set; }
