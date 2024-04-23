@@ -1,7 +1,15 @@
+using expense_tracker_api.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//DI
+builder.Services.AddDbContext<ApplicationDbContext>( options => options.UseNpgsql(
+    builder.Configuration.GetConnectionString("postgreConnect")
+));
 
 var app = builder.Build();
 
